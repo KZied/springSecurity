@@ -17,7 +17,7 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    private static final String SECRET_KEY = "FwcIfbLY32CSL8PoNdhDCFYUpLxRSlHcoH3S21lpXK2m0C5v/Xyr/G3Q1uTMmiVYs3fH2+LQJftuOnCYNJ8lO1/Q/2YFVg35tzcWiB9RABY9eIEbrpMmtAchE87Bm/NAW1iwz76pKkg7PGEW1nPD2VEZpVJXLHYu0/pUFYSz7okKBp1bhUZlBpcNoUGVBWEar1h7T77lf3jF3T1HNf/I+XbITXYRFVTbJVXfg1vPzEZ1uMoGAKdYAyerSHMNULvid835+e+pTwh5fC7BA19hxNft8xhEFZKZzTRFmSiGL12YncBHrX4Q0BtyHWAtLWasj9arY3WXt8wJnNkTNq6vK3A8qbu3olH+HnVw4Pbh/74=";
+    private static final String SECRET_KEY = "7FABD3C34F8A2E159E216C71D9975E6A4E6A3E7F4A1B2C3D5E6F7A8B9C0D1E2F";
 
     public String extractUsername(String token) {
         //the subject of the token which is the email/username
@@ -69,7 +69,7 @@ public class JwtService {
                 .parseClaimsJws(token)
                 .getBody();
     }
-
+    
     public Key getSignInKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
